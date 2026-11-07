@@ -1,0 +1,413 @@
+/* ==================================
+   GLOBAL APP LAYOUT
+================================== */
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+}
+
+.app-container {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #ffffff;
+}
+
+/* ==================================
+   DESKTOP BRAND PANEL
+================================== */
+
+.brand-panel {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  background: #f3f7fc;
+}
+
+.brand-content {
+  width: 100%;
+  max-width: 440px;
+  text-align: center;
+}
+
+/* DESKTOP LOGO */
+
+.brand-logo {
+  display: block;
+  width: 340px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  margin: 0 auto 30px;
+}
+
+.brand-content h2 {
+  color: #0b2d55;
+  font-size: 25px;
+  font-weight: 750;
+  margin-bottom: 15px;
+}
+
+.brand-content p {
+  max-width: 360px;
+  margin: 0 auto;
+  color: #718096;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.brand-footer {
+  display: block;
+  margin-top: 65px;
+  color: #8997a8;
+  font-size: 12px;
+}
+
+/* ==================================
+   AUTH PANEL
+================================== */
+
+.auth-panel {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 35px;
+  background: #ffffff;
+}
+
+.auth-content {
+  width: 100%;
+  max-width: 420px;
+}
+
+.mobile-brand,
+.mobile-footer {
+  display: none;
+}
+
+/* ==================================
+   FORM HEADING
+================================== */
+
+.form-heading {
+  margin-bottom: 32px;
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 13px;
+  color: #f28c00;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.form-heading h2 {
+  margin-bottom: 10px;
+  color: #0b2d55;
+  font-size: 30px;
+  font-weight: 750;
+  line-height: 1.3;
+}
+
+.form-heading p {
+  color: #718096;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* ==================================
+   INPUT FIELDS
+================================== */
+
+.input-group {
+  margin-bottom: 19px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #23364d;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.input-group input {
+  width: 100%;
+  height: 49px;
+  padding: 0 15px;
+  border: 1px solid #dce5ef;
+  border-radius: 8px;
+  outline: none;
+  background: #f7f9fc;
+  color: #0b2d55;
+  font-family: inherit;
+  font-size: 14px;
+  transition: 0.2s ease;
+}
+
+.input-group input::placeholder {
+  color: #a0acba;
+}
+
+.input-group input:focus {
+  border-color: #f28c00;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(242, 140, 0, 0.10);
+}
+
+/* ==================================
+   BUTTONS
+================================== */
+
+.primary-button {
+  width: 100%;
+  min-height: 49px;
+  margin-top: 9px;
+  border: 1px solid #0b2d55;
+  border-radius: 8px;
+  background: #0b2d55;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.primary-button:hover {
+  border-color: #f28c00;
+  background: #123d6d;
+}
+
+.text-button {
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #0b2d55;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.text-button:hover {
+  color: #f28c00;
+}
+
+.forgot-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -5px;
+  margin-bottom: 18px;
+}
+
+.form-bottom {
+  margin-top: 27px;
+  color: #718096;
+  font-size: 13px;
+  text-align: center;
+}
+
+.signup-link {
+  margin-left: 5px;
+}
+
+/* ==================================
+   ROLE SELECTION
+================================== */
+
+.role-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.role-option {
+  width: 100%;
+  min-height: 90px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 17px;
+  border: 1px solid #e0e8f1;
+  border-radius: 9px;
+  background: #f7f9fc;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.role-option:hover {
+  border-color: #f28c00;
+  background: #ffffff;
+}
+
+.role-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 9px;
+  background: #eaf1f9;
+  font-size: 23px;
+}
+
+.role-text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.role-text strong {
+  color: #0b2d55;
+  font-size: 15px;
+}
+
+.role-text small {
+  color: #718096;
+  font-size: 12px;
+}
+
+.role-arrow {
+  color: #f28c00;
+  font-size: 27px;
+}
+
+/* ==================================
+   TABLET
+================================== */
+
+@media (max-width: 900px) and (min-width: 701px) {
+
+  .app-container {
+    grid-template-columns: 0.8fr 1.2fr;
+  }
+
+  .brand-panel {
+    padding: 25px;
+  }
+
+  .brand-logo {
+    width: 270px;
+  }
+
+  .auth-panel {
+    padding: 35px 25px;
+  }
+
+}
+
+/* ==================================
+   MOBILE
+================================== */
+
+@media (max-width: 700px) {
+
+  .app-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    background: #ffffff;
+  }
+
+  .brand-panel {
+    display: none;
+  }
+
+  .auth-panel {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 28px 22px 22px;
+    background: #ffffff;
+  }
+
+  /* MOBILE LOGO */
+
+  .mobile-brand {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+  }
+
+  .mobile-brand img {
+    display: block;
+    width: 280px;
+    max-width: 90%;
+    height: auto;
+    object-fit: contain;
+    margin: 0 auto;
+  }
+
+  .auth-content {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .form-heading {
+    margin-bottom: 25px;
+  }
+
+  .form-heading h2 {
+    font-size: 25px;
+  }
+
+  .mobile-footer {
+    display: block;
+    width: 100%;
+    margin-top: auto;
+    padding-top: 35px;
+    color: #9aa6b4;
+    font-size: 11px;
+    text-align: center;
+  }
+
+}
+
+/* ==================================
+   SMALL MOBILE
+================================== */
+
+@media (max-width: 380px) {
+
+  .auth-panel {
+    padding: 22px 17px;
+  }
+
+  .mobile-brand {
+    margin-bottom: 22px;
+  }
+
+  .mobile-brand img {
+    width: 250px;
+    max-width: 90%;
+    height: auto;
+  }
+
+  .form-heading h2 {
+    font-size: 23px;
+  }
+
+  .input-group input {
+    height: 46px;
+  }
+
+}
