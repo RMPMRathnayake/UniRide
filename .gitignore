@@ -1,0 +1,34 @@
+# Dependencies
+node_modules/
+*/node_modules/
+package-lock.json.backup
+
+# Environment & Credentials
+.env
+.env.*
+!.env.example
+uniride-backend/.env
+uniride-frontend/.env
+
+# Build outputs
+dist/
+build/
+*/dist/
+*/build/
+
+# Uploaded / generated files & local storage
+storage/receipts/*
+!storage/receipts/.gitkeep
+**/storage/receipts/*
+!**/storage/receipts/.gitkeep
+user_uploaded_files/
+artifacts/
+
+# OS & Editor cache
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
