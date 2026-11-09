@@ -1,0 +1,16 @@
+import { Router } from 'express';
+import { getDashboard, getProfile, updateProfile, changePassword, updateAvailability } from '../controllers/driverController.js';
+import { getEarnings } from '../controllers/earningsController.js';
+import { getReviews } from '../controllers/driverReviewController.js';
+import protect, { requireRole } from '../middleware/auth.js';
+import { asyncHandler } from '../utils/asyncHandler.js';
+const router = Router();
+router.use(protect, requireRole('driver'));
+router.get('/dashboard', asyncHandler(getDashboard));
+router.get('/profile', asyncHandler(getProfile));
+router.patch('/profile', asyncHandler(updateProfile));
+router.patch('/password', asyncHandler(changePassword));
+router.patch('/availability', asyncHandler(updateAvailability));
+router.get('/earnings', asyncHandler(getEarnings));
+router.get('/reviews', asyncHandler(getReviews));
+export default router;

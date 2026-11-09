@@ -1,0 +1,10 @@
+import { Router } from 'express';
+import protect, { requireRole } from '../middleware/auth.js';
+import { listOrders, createOrder, updateOrderStatus } from '../controllers/deliveryController.js';
+import { asyncHandler } from '../utils/asyncHandler.js';
+const router = Router();
+router.use(protect, requireRole('rider'));
+router.get('/', asyncHandler(listOrders));
+router.post('/', asyncHandler(createOrder));
+router.patch('/:id/status', asyncHandler(updateOrderStatus));
+export default router;

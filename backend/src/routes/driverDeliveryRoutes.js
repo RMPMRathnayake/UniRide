@@ -1,0 +1,10 @@
+import { Router } from 'express';
+import protect, { requireRole } from '../middleware/auth.js';
+import { listDeliveries, acceptDelivery, updateDeliveryStatus } from '../controllers/driverDeliveryController.js';
+import { asyncHandler } from '../utils/asyncHandler.js';
+const router = Router();
+router.use(protect, requireRole('driver'));
+router.get('/', asyncHandler(listDeliveries));
+router.post('/:id/accept', asyncHandler(acceptDelivery));
+router.patch('/:id/status', asyncHandler(updateDeliveryStatus));
+export default router;

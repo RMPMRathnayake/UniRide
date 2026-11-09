@@ -1,0 +1,13 @@
+import { Router } from 'express';
+import rateLimit from 'express-rate-limit';
+import protect, { requireRole } from '../middleware/auth.js';
+import { drivingRoute, reversePlace, searchPlaces } from '../controllers/geocodingController.js';
+const router = Router();
+const searchLimit = rateLimit({ windowMs: 1000, limit: 1, standardHeaders: 'draft-7', legacyHeaders: false, message: { message: 'Please wait a moment before searching again.' } });
+const reverseLimit = rateLimit({ windowMs: 1000, limit: 1, standardHeaders: 'draft-7', legacyHeaders: false, message: { message: 'Please wait a moment before choosing another map point.' } });
+const routeLimit = rateLimit({ windowMs: 60 * 1000, limit: 30, standardHeaders: 'draft-7', legacyHeaders: false, message: { message: 'Too many route calculations. Please wait a moment and try again.' } });
+router.use(protect, requireRole('rider'));
+router.get('/search', searchLimit, searchPlaces);
+router.get('/reverse', reverseLimit, reversePlace);
+router.get('/route', routeLimit, drivingRoute);
+export default router;

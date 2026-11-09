@@ -1,0 +1,12 @@
+import { Router } from 'express';
+import protect, { requireRole } from '../middleware/auth.js';
+import { changePassword, dashboard, profile, spending, updateProfile } from '../controllers/riderController.js';
+import { asyncHandler } from '../utils/asyncHandler.js';
+const router = Router();
+router.use(protect, requireRole('rider'));
+router.get('/dashboard', asyncHandler(dashboard));
+router.get('/profile', asyncHandler(profile));
+router.patch('/profile', asyncHandler(updateProfile));
+router.patch('/password', asyncHandler(changePassword));
+router.get('/spending', asyncHandler(spending));
+export default router;
